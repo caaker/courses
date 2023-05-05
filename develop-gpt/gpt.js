@@ -35,14 +35,13 @@ const seed = 1337;
 const device = tf.getBackend() === 'webgl' ? 'gpu' : 'cpu';
 
 // get 4 random integers to use as start indexes
-// take a chunk of 8 elements at each index i and stack these for a tensor of shape(4, 8)
-// take a chunk of 8 elements at each index i+1 and stack these for a tensor of shape (4, 8)
 function getBatch(type) {
   const data = type === 'train' ? train_data : val_data;
   const ix = tf.randomUniform([batch_size], 0, data.length - block_size, 'int32', seed);
   let x = tf.stack(ix.arraySync().map(i => data.slice(i, i + block_size)));
   let y = tf.stack(ix.arraySync().map(i => data.slice(i + 1, i + block_size + 1)));
-  // x = x.buffer().toTensor().to(device); // broken
+
+  // send to device here before returning
   return [x, y];
 }
 
