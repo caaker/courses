@@ -1,29 +1,19 @@
-// hof - higher order functions
-
 // looping
-const output2 = [];
-[0, 1, 2, 3, 4].forEach((val, i)=>{
-  output2.push(val);
-});
-console.log('Looping: ', output2);
+let output = [];
+[0, 1, 2, 3, 4].forEach((val, i) => output.push(val));
+console.log('Looping: ', output);
 
-// mapping - multiply all by 2
-const output3 = [0, 1, 2, 3, 4].map((val)=>{
-  return val * 2;
-});
-console.log('Mapping: ', output3);
+// mapping
+output = [0, 1, 2, 3, 4].map((val) => val * 2);
+console.log('Mapping: ', output);
 
-// filtering - filter even numbers
-const output4 = [0, 1, 2, 3, 4].filter((val)=>{
-  if(val % 2 === 0) {
-    return true;
-  }
-});
-console.log('Filtering: ', output4);
+// filtering
+output = [0, 1, 2, 3, 4].filter((val) => val % 2 === 0 ? true : false);
+console.log('Filtering: ', output);
 
 // reducing - reduce an array to a single value
 const initial = 0;
-const output1 = [1, 2, 3, 4].reduce((previous, current, index, array)=>{
+output = [1, 2, 3, 4].reduce((previous, current, index, array)=>{
   return previous + current;
 }, initial);
-console.log('Reducing: ', output1);
+console.log('Reducing: ', output);
