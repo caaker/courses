@@ -1,4 +1,5 @@
 // 7 original types - number, string, array, hash, function, null, undefined
+// there are more now
 
 const number = 1;
 const string = 'string';
@@ -51,6 +52,6 @@ console.log(typeOf(und));
 
 // more types
 
-// big int
+// big int init size is only limited by memory available.
 const biggy = 1000000000000000000000000000000000000n;
 console.log(biggy);

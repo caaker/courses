@@ -14,7 +14,7 @@ vocab_size = len(chars)
 chtoi = { ch:i for i,ch in enumerate(chars) }
 itoch = { i:ch for i,ch in enumerate(chars) }
 
-# decode takes a string and returns an array of integers, decode doe the opposite
+# decode takes a string and returns an array of integers, decode does the opposite
 encode = lambda str: [chtoi[ch] for ch in str]
 decode = lambda arr: ''.join([itoch[i] for i in arr])
 
@@ -45,7 +45,7 @@ def get_batch(type):
     # send the stacks to the device
     x, y = x.to(device), y.to(device)
 
-    # return the stacks
+    # return the stacks which are now loaded in the device
     return x, y
 
 # @torch.no_grad and model.evel() are often used together to turn off certain training specific options
@@ -67,10 +67,12 @@ def estimate_loss():
         # set each value in the losses vector
         for k in range(C.eval_iters):
 
-            # figure out what is returned here
+            # the stacked tensors, loaded into the device
             X, Y = get_batch(type)
 
-            # creates a forward pass of the model, this is not a constructor
+            # this is not a constructor, it actually calls forward defined in model
+            # logits contains the predictions for X
+            # loss contains a scalar representing the accuracy of the model
             logits, loss = model(X, Y)
 
             # finally populate the losses vector after a forward pass of the model

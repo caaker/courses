@@ -7,6 +7,7 @@ int main() {
 
   // input removed for use in sublime with no terminal access
   // printf("please enter your name\n");
+  // reads up to 19 characters, the last character is reserved for the null character '\0'
   // scanf("%19s", username);
 
   printf("Hello %s\n", username);

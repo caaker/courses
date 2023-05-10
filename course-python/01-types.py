@@ -15,12 +15,15 @@ print(type(s))
 s = (4)
 print(type(s))
 
-# a tuple - <class 'tuple'>
+# a tuple - <class 'tuple'>, a tuple does not have size or shape, just length, it is immutable
 t = (4,)
 print(type(t))
+# print(t)
+# print(len(t))
 
 # a dynamic array - <class 'list'>
 print(type([0]))
 
 # a hash table - <class 'dict'>
 print(type({'a': 0}))
+

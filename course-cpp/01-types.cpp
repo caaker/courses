@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void types() {
+void sameAsC() {
   int i = 1;
   float f = 1.0;
   double d = 2.0;
@@ -12,6 +12,14 @@ void types() {
   cout << "c: " << c << endl;
 }
 
+void newTypes() {
+  // classes
+  // templates
+  // exceptions
+  // STL containers
+  // smart pointers
+}
+
 int main() {
-  types();
+  sameAsC();
 }

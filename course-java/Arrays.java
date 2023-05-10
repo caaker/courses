@@ -13,7 +13,7 @@ class Arrays {
         int[] arr_int = new int[10];
         System.out.println(arr_int[0]);
 
-        // chars - empty string
+        // chars - default is the null character - <0x00>
         char[] arr_char = new char[10];
         System.out.println(arr_char[0]);
 
