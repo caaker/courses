@@ -4,9 +4,11 @@ import torch.nn as nn
 
 
 # Will end up calling Head
-class MultiHead(nn.Module):
+class MultiHeadAttention(nn.Module):
     """ multiple heads of self-attention in parallel """
 
+    def __init__(self, num_heads, head_size):
+        super().__init__()
 
 # attention is a mechanism that allows the model to selectively focus on specific parts of the input data when making predictions
 class Head(nn.Module):

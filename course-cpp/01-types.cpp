@@ -1,15 +1,17 @@
 #include <iostream>
 using namespace std;
 
-void sameAsC() {
+void types() {
   int i = 1;
   float f = 1.0;
   double d = 2.0;
   char c = 'c';
-  cout << "i: " << i << endl;
-  cout << "f: " << f << endl;
-  cout << "d: " << d << endl;
-  cout << "c: " << c << endl;
+  bool b = true;
+  cout << "int: " << i << endl;
+  cout << "float: " << f << endl;
+  cout << "double: " << d << endl;
+  cout << "char: " << c << endl;
+  cout << "bool: " << b << endl;
 }
 
 void newTypes() {
@@ -21,5 +23,6 @@ void newTypes() {
 }
 
 int main() {
-  sameAsC();
+  types();
+  newTypes();
 }

@@ -41,8 +41,6 @@ class Block(nn.Module):
         x = x + self.ffwd(self.ln2(x))
         return x
 
-
-
 class FeedFoward(nn.Module):
     """ a simple linear layer followed by a non-linearity """
 

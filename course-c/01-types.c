@@ -1,56 +1,51 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-void commonTypes() {
-  int i = 1;
-  int32_t i32 = 1;
-  int64_t i64 = 1;
-  printf("Size of int   is: %zu \n", sizeof(i));
-  printf("Size of int32 is: %zu \n", sizeof(i32));
-  printf("Size of int64 is: %zu \n", sizeof(i64));
-
+void types() {
   float f = 1.0;
   double d = 2.0;
   char c = 'c';
   long l = 1;
+  bool b = true;
+  printf("Size of int: %zu bytes\n", sizeof(int));
+  printf("Size of char: %zu bytes\n", sizeof(char));
+  printf("Size of float: %zu bytes\n", sizeof(float));
+  printf("Size of double: %zu bytes\n", sizeof(double));
+  printf("Size of void: %zu bytes\n", sizeof(void));
 }
 
-// constant
-// we can not change the value
-void constant() {
-  const int c1 = 0;
-  // c1 = 0; // throws error
-  printf("%i\n", c1);
+void strings() {
+
+  // a string can be declared using an array of characters
+  char str1[] = "";
+  char str2[] = "a";
+  char str3[] = "ab";
+  printf("--\n");
+  printf("%zu is the size of '' \n", sizeof(str1));
+  printf("%zu is the size of 'a' \n", sizeof(str2));
+  printf("%zu is the size of 'ab' \n", sizeof(str3));
+
+  // a string can be declared using a character pointer
+  printf("--\n");
+  char* str4 = "";
+  char* str5 = "a";
+  char* str6 = "ab";
+  printf("%zu is the size of %s \n", sizeof(str4), str4);
+  printf("%zu is the size of %s \n", sizeof(str5), str5);
+  printf("%zu is the size of %s \n", sizeof(str6), str6);
 }
 
-// constant pointer
-// we can not change the address pointed to
-void constantPointer() {
-  int x = 1;
-  int y = 2;
-  int* const p_int1 = &x;
-  *p_int1 = y;
-  // p_int1 = &y; // throws error
-  printf("%i\n", *p_int1);
-}
-
-// constant pointer value
-// we can not change the value via the pointer
-void constantPointerValue() {
-  int x = 3;
-  int y = 4;
-  const int *p_int = &x;
-  int *p1_int = &x;
-  p_int = &y;
-  y = 5;
-  // *p_int = 3; // throws error
-  *p1_int = 6;
-  printf("%i\n", *p1_int);
+void intSize() {
+  // note that lu refers to long, unsigned, and integer is implicit
+  // however zu is the option for size_t, and appears not to be an acronym
+  // int on this machine is 4 bytes / 32 bits
+  int a = 3;
+  printf("%zu is the size of int \n", sizeof(int));
+  printf("%zu is the size of a \n", sizeof(a));
+  printf("%zu is the size of &a \n", sizeof(&a));
 }
 
 int main() {
-  commonTypes();
-  constant();
-  constantPointer();
-  constantPointerValue();
-  return 0;
+
+  return 1;
 }

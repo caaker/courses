@@ -1,5 +1,4 @@
-// 7 original types - number, string, array, hash, function, null, undefined
-// there are more now
+// main types - number, string, array, hash, function, null, undefined
 
 const number = 1;
 const string = 'string';
@@ -19,7 +18,7 @@ fun.prop;
 // nul.prop;
 // und.prop;
 
-// Note that array and null are broken
+// Note that typeof is broken for array and null
 
 // console.log(typeof number);
 // console.log(typeof string);
@@ -50,8 +49,9 @@ console.log(typeOf(fun));
 console.log(typeOf(nul));
 console.log(typeOf(und));
 
+
 // more types
 
-// big int init size is only limited by memory available.
+// big int size is only limited by memory available.
 const biggy = 1000000000000000000000000000000000000n;
 console.log(biggy);
