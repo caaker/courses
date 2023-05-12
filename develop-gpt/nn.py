@@ -1,12 +1,10 @@
-from nn_constants import C
+from nn_constants import Cb as C
 import torch
 
 
-"""
-
-Below is common to both GPT and Bigram
-
-"""
+#
+# Common
+#
 
 
 # analyze text
@@ -25,38 +23,63 @@ n = int(0.9*len(data))
 train_data = data[:n]
 val_data = data[n:]
 
-# get batch
+# get random batches from data
 torch.manual_seed(1337)
 def get_batch(type):
     data = train_data if type == 'train' else val_data
     ix = torch.randint(len(data) - C.block_size, (C.batch_size,))
     x = torch.stack([data[i:i+C.block_size] for i in ix])
     y = torch.stack([data[i+1:i+C.block_size+1] for i in ix])
-    x, y = x.to(device), y.to(device)
+    x, y = x.to(C.device), y.to(C.device)
     return x, y
 
-# run batch
+# run batch through forward pass of the neural network
 @torch.no_grad()
 def estimate_loss():
     out = {}
-    model.eval()
+    model0.eval()
     for type in ['train', 'val']:
         losses = torch.zeros(C.eval_iters)
         for k in range(C.eval_iters):
             X, Y = get_batch(type)
-            logits, loss = model(X, Y)
+            logits, loss = model0(X, Y)
             losses[k] = loss.item()
         out[type] = losses.mean()
-    model.train()
+    model0.train()
     return out
 
+#
+# Bigram Model
+#
 
-"""
-
-Above is common to both GPT and Bigram
-
-"""
+from nn_model_bigram import BigramLanguageModel
+model0 = BigramLanguageModel(vocab_size)
+model1 = model0.to(C.device)
 
 
-from gpt_model import GPTLanguageModel
-model = GPTLanguageModel(vocab_size)
+#
+# Bigram Model - Train
+#
+
+def train_model(model, learning_rate, max_iters, eval_interval):
+    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
+    for iter in range(max_iters):
+        if iter % eval_interval == 0:
+            losses = estimate_loss()
+            print(f"step {iter}: train loss {losses['train']:.4f}, val loss {losses['val']:.4f}")
+        xb, yb = get_batch('train')
+        logits, loss = model(xb, yb)
+        optimizer.zero_grad(set_to_none=True)
+        loss.backward()
+        optimizer.step()
+train_model(model0, C.learning_rate, C.max_iters, C.eval_interval)
+
+#
+# Bigram Model - Generate
+#
+
+def generate_text():
+    context = torch.zeros((1, 1), dtype=torch.long, device=C.device)
+    test = model1.generate(context, max_new_tokens=500)
+    print(decode(test[0].tolist()))
+generate_text()

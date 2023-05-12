@@ -1,6 +1,7 @@
 import torch
 
-class C:
+# update to Cg for constants GPT
+class Cg:
 
     # forward pass constants
     batch_size = 4
@@ -22,7 +23,8 @@ class C:
     n_head = 6
     head_size = n_embd // n_head
 
-class C1:
+# update to Cb for Constants Bigram
+class Cb:
 
     # forward pass constants
     batch_size = 32

@@ -1,20 +1,21 @@
 #include <iostream>
+using namespace std;
 
 class Hello {
 public:
 
     // constructor
     Hello() {
-        std::cout << "I am a constructor" << std::endl;
+        cout << "I am a constructor" << endl;
     }
 
     // instance method
     void hi() {
-        std::cout << "I am an instance method!" << std::endl;
+        cout << "I am an instance method!" << endl;
     }
 
     static void hello() {
-        std::cout << "I am a static method!\n";
+        cout << "I am a static method!\n";
     }
 };
 
