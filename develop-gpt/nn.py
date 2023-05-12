@@ -1,7 +1,15 @@
 from nn_constants import C
 import torch
 
-# module 1 - textually analyze input for encode / decode
+
+"""
+
+Below is common to both GPT and Bigram
+
+"""
+
+
+# analyze text
 with open("input.txt", "r") as f:
     text = f.read()
 chars = sorted(list(set(text)))
@@ -11,13 +19,13 @@ itoch = { i:ch for i,ch in enumerate(chars) }
 encode = lambda str: [chtoi[ch] for ch in str]
 decode = lambda arr: ''.join([itoch[i] for i in arr])
 
-# module 2 - transform text to a vector of ints
+# make data
 data = torch.tensor(encode(text), dtype=torch.long)
 n = int(0.9*len(data))
 train_data = data[:n]
 val_data = data[n:]
 
-# module 3 - get batches of the vector data for ( input x ) and ( output y )
+# get batch
 torch.manual_seed(1337)
 def get_batch(type):
     data = train_data if type == 'train' else val_data
@@ -27,7 +35,7 @@ def get_batch(type):
     x, y = x.to(device), y.to(device)
     return x, y
 
-# module 4 - run a model
+# run batch
 @torch.no_grad()
 def estimate_loss():
     out = {}
@@ -42,6 +50,13 @@ def estimate_loss():
     model.train()
     return out
 
-# instantiate the gpt language model
+
+"""
+
+Above is common to both GPT and Bigram
+
+"""
+
+
 from gpt_model import GPTLanguageModel
 model = GPTLanguageModel(vocab_size)

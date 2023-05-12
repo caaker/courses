@@ -31,7 +31,3 @@ function funcProp() {
 }
 funcProp.arg0 = 'arg0';
 
-// logger returns anonymous function with next argument
-const logger = store => next => action => {}
-
-console.log(logger('hi yall'));
