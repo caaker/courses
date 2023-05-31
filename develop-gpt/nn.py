@@ -1,11 +1,9 @@
 from nn_constants import Cb as C
 import torch
 
-
 #
 # Common
 #
-
 
 # analyze text
 with open("input.txt", "r") as f:
@@ -17,13 +15,14 @@ itoch = { i:ch for i,ch in enumerate(chars) }
 encode = lambda str: [chtoi[ch] for ch in str]
 decode = lambda arr: ''.join([itoch[i] for i in arr])
 
-# make data
+# make training and validation data tensors
 data = torch.tensor(encode(text), dtype=torch.long)
 n = int(0.9*len(data))
 train_data = data[:n]
 val_data = data[n:]
 
-# get random batches from data
+# get random chunks of data in stacks of batch_size ( B Dimension ) by block_size ( T Dimension )
+# for both context ( x ) and target ( y )
 torch.manual_seed(1337)
 def get_batch(type):
     data = train_data if type == 'train' else val_data
@@ -41,8 +40,8 @@ def estimate_loss():
     for type in ['train', 'val']:
         losses = torch.zeros(C.eval_iters)
         for k in range(C.eval_iters):
-            X, Y = get_batch(type)
-            logits, loss = model0(X, Y)
+            x, y = get_batch(type)
+            logits, loss = model0(x, y)
             losses[k] = loss.item()
         out[type] = losses.mean()
     model0.train()

@@ -1,5 +1,4 @@
 // main types - number, string, array, hash, function, null, undefined
-
 const number = 1;
 const string = 'string';
 const array = ['val1', 'val2'];
@@ -9,24 +8,22 @@ const nul = null;
 const und = undefined;
 
 // Note that only null and undefined will throw an error if you try to access a non-existent property on them
-
 number.prop;
 string.prop;
 array.prop;
 hash.prop;
 fun.prop;
-// nul.prop;
-// und.prop;
+
 
 // Note that typeof is broken for array and null
-
-// console.log(typeof number);
-// console.log(typeof string);
-// console.log(typeof array);  // returns object
-// console.log(typeof hash);   // returns object
-// console.log(typeof fun);
-// console.log(typeof nul);    // returns object
-// console.log(typeof und);
+console.log('TYPEOF\n');
+console.log(typeof number);
+console.log(typeof string);
+console.log(typeof array);  // returns object
+console.log(typeof hash);   // returns object
+console.log(typeof fun);
+console.log(typeof nul);    // returns object
+console.log(typeof und);
 
 // we can replace the operator typeof with the function typeOf to fix the null and array issue
 function typeOf(test) {
@@ -41,6 +38,8 @@ function typeOf(test) {
   return ret;
 }
 
+
+console.log('\nTYPEOF IMPROVED\n');
 console.log(typeOf(number));
 console.log(typeOf(string));
 console.log(typeOf(array));
@@ -50,8 +49,6 @@ console.log(typeOf(nul));
 console.log(typeOf(und));
 
 
-// more types
-
-// big int size is only limited by memory available.
+console.log('\nMORE TYPES\n');
 const biggy = 1000000000000000000000000000000000000n;
 console.log(biggy);

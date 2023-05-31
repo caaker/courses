@@ -2,16 +2,23 @@
 #include <stdbool.h>
 
 void types() {
+  char c = 'c';
+  short s = 1;
+  int i = 1;
+  printf("Size of char: %zu bytes\n", sizeof(char));
+  printf("Size of short: %zu bytes\n", sizeof(short));
+  printf("Size of int: %zu bytes\n", sizeof(int));
+
   float f = 1.0;
   double d = 2.0;
-  char c = 'c';
   long l = 1;
-  bool b = true;
-  printf("Size of int: %zu bytes\n", sizeof(int));
-  printf("Size of char: %zu bytes\n", sizeof(char));
   printf("Size of float: %zu bytes\n", sizeof(float));
   printf("Size of double: %zu bytes\n", sizeof(double));
-  printf("Size of void: %zu bytes\n", sizeof(void));
+  printf("Size of long: %zu bytes\n", sizeof(long));
+
+  bool b = true;
+  printf("Size of bool: %zu bytes\n", sizeof(bool));
+
 }
 
 void strings() {
@@ -46,6 +53,6 @@ void intSize() {
 }
 
 int main() {
-
+  types();
   return 1;
 }

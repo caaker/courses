@@ -1,4 +1,8 @@
-# ...
+print("")
+print("***************")
+print("     types     ")
+print("***************")
+print("")
 
 # an integer - <class 'int'>
 i = 4
@@ -20,20 +24,34 @@ print(type(s))
 b = True
 print(type(b))
 
-# an boolean - <class 'complex'>
+# a complex number - <class 'complex'>
 c = 1 + 2j
 print(type(c))
 
 
-# ...
+print("")
+print("***************")
+print("composite types")
+print("***************")
+print("")
 
 
 # a tuple - <class 'tuple'>,
-t = (4, 2)
-print(type(t))
+tuple = (4, )
+print(type(tuple))
+
+# a tuple - <class 'tuple'>,
+tuple = (4, 2)
+print(type(tuple))
 
 # a dynamic array - <class 'list'>
-print(type([0]))
+list = [0]
+print(type(list))
 
 # a hash table - <class 'dict'>
-print(type({'a': 0}))
+dict = {'a': 0}
+print(type(dict))
+
+# a set - <class 'set'>
+set = { 1, 2, 3 }
+print(type(set))

@@ -33,6 +33,6 @@ class Cb:
     eval_iters = 200
 
     # general
-    max_iters = 3000
+    max_iters = 10000
     eval_interval = 300
     learning_rate = 1e-2

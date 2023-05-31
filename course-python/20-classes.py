@@ -3,7 +3,7 @@ class MySuperClass():
     def __init__(self):
         print("I'm a super constructor")
 
-    # arg1 is required
+    # arg1 is required and it is self, convention to name self
     def superMethod(arg1):
         print("I'm a super method");
 
@@ -16,7 +16,7 @@ class MyClass(MySuperClass):
         super().__init__()
         print("I'm a constructor")
 
-    # arg1 is required
+    # arg1 is required and it is self, convention to name self
     def method(arg1):
         print("I'm a method")
 

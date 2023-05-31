@@ -14,6 +14,7 @@ public:
         cout << "I am an instance method!" << endl;
     }
 
+    // static method
     static void hello() {
         cout << "I am a static method!\n";
     }
@@ -28,5 +29,6 @@ int main() {
 
     // call the instance method hi
     hello.hi();
+
     return 0;
 }
