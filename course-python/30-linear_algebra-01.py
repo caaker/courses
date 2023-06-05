@@ -1,6 +1,6 @@
 # dot multiplication
 # https://numpy.org/doc/stable/reference/generated/numpy.dot.html
-# chat-gpt code, corrected by me
+# chat-gpt code, corrected
 
 import numpy as np
 
@@ -11,14 +11,13 @@ x = np.array([1, 2, 3])
 A = np.array([[4, 5, 6],
               [7, 8, 9]])
 
-# Perform matrix multiplication
+# Determine the dot product
 y = np.dot(A, x)
 
 # Print the result
-print("Hello, World!")
 print("Matrix A:")
 print(A)
 print("Vector x:")
 print(x)
-print("Matrix-vector multiplication A * x:")
+print("A dot x:")
 print(y)

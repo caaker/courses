@@ -13,7 +13,6 @@ def showBuiltIn(a = 1, b = 2):
     # print(showBuiltIn.__doc__)
     # print(showBuiltIn.__defaults__)
     # print(showBuiltIn.__code__)
-    # globals, annotations
 
 # input is s, return is s
 encode = lambda s: s
