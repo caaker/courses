@@ -19,6 +19,8 @@ console.log(reverseArray(arr));
 
 /*
 
+  Notes:
+
   Algorithm:
 
     base case of 1 item - the loop will not run and the original array is returned

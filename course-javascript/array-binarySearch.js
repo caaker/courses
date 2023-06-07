@@ -25,15 +25,15 @@ console.log(binarySearch(arr, 7));
 
   Notes:
 
-    Always start with the base and iterative case before attempting recursion
+    Write again using recursion
 
   Algorithm:
 
-    With the base case of 1 item, the item is the mid and it is checked
+    With the base case of 1 item, the item is the mid and it is returned
 
   Complexity:
 
-    Space complexity is 1
-    Time complexity is log n
+    Space complexity is O(1)
+    Time complexity is O(log n)
 
 */

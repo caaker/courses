@@ -19,7 +19,7 @@ console.log(linearSearch(arr, 2));
 
   Notes:
 
-    Uses a sentinel to reduce comparisons from 2 to 1
+    Use a sentinel to reduce comparisons from 2 to 1
 
   Algorithm:
 
@@ -28,7 +28,7 @@ console.log(linearSearch(arr, 2));
 
   Complexity:
 
-    Space complexity is 1
-    Time complexity is n
+    Space complexity is O(1)
+    Time complexity is O(n)
 
 */
