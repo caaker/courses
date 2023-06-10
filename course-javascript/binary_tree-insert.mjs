@@ -1,3 +1,5 @@
+// update to use public static class and update jshint
+// embedded as follows: static Node = class {}
 class Node {
   constructor(val) {
     this.val = val;
@@ -9,6 +11,7 @@ class Node {
 class BST {
   constructor() {
     this.root = null;
+    this.makeRandomTree();
   }
   insertNode(val) {
 
@@ -20,12 +23,11 @@ class BST {
     // iterative cases
     let iterator = this.root;
     while(iterator) {
-      console.log(val)
       if(val < iterator.val && !iterator.left) {
-        iterator.left = val;
+        iterator.left = new Node(val);
         return iterator;
       } else if(val >= iterator.val && !iterator.right) {
-        iterator.right = val;
+        iterator.right = new Node(val);
         return iterator
       } else if( val < iterator.val ) {
         iterator = iterator.left;
@@ -35,26 +37,21 @@ class BST {
     }
   }
 
+  makeTree() {
+    this.insertNode(5);
+    this.insertNode(6);
+    this.insertNode(4);
+    this.insertNode(7);
+  }
+
+  makeRandomTree() {
+    for(let i = 0; i < 10; i++) {
+      let int = Math.floor(Math.random() * 10);
+      // console.log(int)
+      this.insertNode(int);
+    }
+  }
+
 }
 
-let bst = new BST();
-
-bst.insertNode(5);
-bst.insertNode(6);
-bst.insertNode(4);
-bst.insertNode(7);
-
-
-/*
-Notes:
-
-make .mjs file and export default the class
-update to use public static class
-static Node = class {}
-export default
-
-*/
-
-
-
-
+export default BST
