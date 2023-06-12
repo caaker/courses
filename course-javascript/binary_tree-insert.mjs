@@ -47,7 +47,6 @@ class BST {
   makeRandomTree() {
     for(let i = 0; i < 10; i++) {
       let int = Math.floor(Math.random() * 10);
-      // console.log(int)
       this.insertNode(int);
     }
   }

@@ -21,8 +21,24 @@ class BSTMethods extends BST {
     recurse(node);
   }
 
+  bfs(node) {
+    const queue = [];
+    if(node) {
+      node.left && queue.unshift(node.left);
+      node.right && queue.unshift(node.right);
+    }
+    let iter = queue.pop();
+    while(iter) {
+      console.log(iter.val)
+      iter.left && queue.unshift(iter.left);
+      iter.right && queue.unshift(iter.right);
+      iter = queue.pop();
+    }
+  }
+
   print() {
-    this.dfs(this.root)
+    // this.dfs(this.root);
+    this.bfs(this.root);
   }
 
 }

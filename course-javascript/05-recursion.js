@@ -9,7 +9,7 @@ function rec1() {
 rec1();
 
 
-// we can us it to split an array in half and in half and in half
+// we can us it to split an array in half and in half and in half ...
 function rec2(arr) {
 
   // base case is when array has 1 item
