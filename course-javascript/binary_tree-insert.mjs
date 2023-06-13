@@ -11,7 +11,8 @@ class Node {
 class BST {
   constructor() {
     this.root = null;
-    this.makeRandomTree();
+    // this.makeRandomTree();
+    this.makeTree();
   }
   insertNode(val) {
 
@@ -38,9 +39,10 @@ class BST {
   }
 
   makeTree() {
+    this.insertNode(10);
     this.insertNode(5);
-    this.insertNode(6);
-    this.insertNode(4);
+    this.insertNode(15);
+    this.insertNode(2);
     this.insertNode(7);
   }
 

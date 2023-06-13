@@ -24,6 +24,8 @@ class BSTMethods extends BST {
   bfs(node) {
     const queue = [];
     if(node) {
+      console.log(node.val)
+      console.log('--')
       node.left && queue.unshift(node.left);
       node.right && queue.unshift(node.right);
     }
