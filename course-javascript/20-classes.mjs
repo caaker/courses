@@ -1,14 +1,21 @@
 class URL {
   constructor(url) {
-    console.log('I\'m a super constructor: ' + url);
+    console.log('I\'m a super constructor');
   }
 }
 
-class Bookmark extends URL {
+class Favorite extends URL {
   constructor(title, url) {
     super(url);
-    console.log('I\'m a constructor: ' + title);
+    this.title = title;
+    this.url = url;
+    console.log('I\'m a constructor');
+  }
+
+  print() {
+    console.log(this.title, this.url)
   }
 }
 
-const B1 = new Bookmark('foo', 'foo.com');
+const F1 = new Favorite('foo', 'foo.com');
+F1.print();

@@ -1,10 +1,12 @@
+
+# python does not have access specifiers
 class MySuperClass():
 
     def __init__(self):
         print("I'm a super constructor")
 
     def superMethod(self):
-        print("I'm a super method");
+        print("I'm a super method")
 
 class MyClass(MySuperClass):
 
@@ -18,6 +20,10 @@ class MyClass(MySuperClass):
     def method(self):
         print("I'm a method")
 
+    def _private_method(self):
+        print("This is intended to be a private method, but using an underscore is just convention")
+
 Instance = MyClass()
 Instance.method()
 Instance.superMethod()
+Instance._private_method()

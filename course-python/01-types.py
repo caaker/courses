@@ -24,10 +24,6 @@ print(type(s))
 b = True
 print(type(b))
 
-# a complex number - <class 'complex'>
-c = 1 + 2j
-print(type(c))
-
 
 print("")
 print("***************")
@@ -35,6 +31,10 @@ print("composite types")
 print("***************")
 print("")
 
+
+# a complex number - <class 'complex'>
+c = 1 + 2j
+print(type(c))
 
 # a tuple - <class 'tuple'>,
 tuple = (4, )

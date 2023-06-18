@@ -11,6 +11,7 @@ public:
     }
 };
 
+// obtuse example for pedagogy
 int main() {
     int arr[3] = {0, 1, 2};
     int length = sizeof(arr) / sizeof(arr[0]);
