@@ -8,14 +8,22 @@ public class Types {
     typesComposite();
   }
 
+  // types require initialization
   public static void types() {
     int i = 1;
-    float F = 1.0f;
+    System.out.println(i);
+    float f = 1.0f;
+    System.out.println(f);
     double d = 2.0;
+    System.out.println(d);
     char c = 'c';
+    System.out.println(c);
     boolean b = true;
+    System.out.println(b);
     byte by = 1;
+    System.out.println(by);
     short s = 1;
+    System.out.println(s);
   }
 
   public static void typesComposite() {

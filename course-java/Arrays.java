@@ -4,6 +4,7 @@ class Arrays {
         arrayDefaults();
     }
 
+    // arrays have default initial values
     public static void arrayDefaults() {
 
         // empty string
