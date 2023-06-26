@@ -1,6 +1,5 @@
 # dot multiplication
 # https://numpy.org/doc/stable/reference/generated/numpy.dot.html
-# chat-gpt code, corrected
 
 import numpy as np
 

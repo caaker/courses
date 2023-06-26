@@ -2,7 +2,7 @@
 using namespace std;
 
 class Hello {
-public:
+ public:
 
     // constructor
     Hello() {
@@ -20,7 +20,7 @@ public:
         privateMethod();
     }
 
-private:
+ private:
 
     // private static method
     static void privateMethod() {

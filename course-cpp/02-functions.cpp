@@ -14,7 +14,6 @@ void defaultValue(int b = 1) {
 int main() {
   int a = argLoop(1);
   cout << "a: " << a << endl;
-
   defaultValue();
   return 0;
 }

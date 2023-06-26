@@ -7,12 +7,3 @@ numbers = numbers[:5]
 
 for number in numbers:
     print(number)
-
-
-
-
-# skyways
-# gabriel - full stack
-# katy - dev ops
-
-# skygrid
