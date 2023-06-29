@@ -1,19 +1,22 @@
 #include <stdio.h>
 
+// return the argument
 int loopInt(a) {
-  printf("One argument is %i \n", a);
   return a;
 }
 
+// simple sum function
 int sum(a, b) {
   return a + b;
 }
 
+// main is a function that returns 0 if there are no errors
 int main() {
-  int a = loopInt(1);
-  printf("It came back as %i \n", a);
+  int a = 1;
+  a = loopInt(a);
+  printf("loopInt: %i \n", a);
 
   int b = sum(2, 2);
-  printf("Sum is: %i \n", b);
+  printf("sum: %i \n", b);
   return 0;
 }

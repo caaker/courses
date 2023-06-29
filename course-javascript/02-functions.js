@@ -31,3 +31,9 @@ function funcProp() {
 }
 funcProp.arg0 = 'arg0';
 
+// functions can be passed in to other functions
+function funcArg(arg) {
+  arg();
+}
+funcArg(funcProp);
+

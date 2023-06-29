@@ -18,6 +18,6 @@ def showBuiltIn(a = 1, b = 2):
 encode = lambda s: s
 
 print_hello("Hello")
-greet();
-
+greet()
 showBuiltIn()
+encode('a')
