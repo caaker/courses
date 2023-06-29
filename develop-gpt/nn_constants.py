@@ -1,6 +1,6 @@
 import torch
 
-# update to Cg for constants GPT
+# Cg for constants GPT
 class Cg:
 
     # forward pass constants
@@ -23,7 +23,7 @@ class Cg:
     n_head = 6
     head_size = n_embd // n_head
 
-# update to Cb for Constants Bigram
+# Cb for Constants Bigram
 class Cb:
 
     # forward pass constants
@@ -33,6 +33,6 @@ class Cb:
     eval_iters = 200
 
     # general
-    max_iters = 10000
+    max_iters = 3000
     eval_interval = 300
     learning_rate = 1e-2

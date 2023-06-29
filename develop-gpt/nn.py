@@ -53,7 +53,7 @@ def estimate_loss():
 
 from nn_model_bigram import BigramLanguageModel
 model0 = BigramLanguageModel(vocab_size)
-model1 = model0.to(C.device)
+model0.to(C.device)
 
 
 #
@@ -79,6 +79,6 @@ train_model(model0, C.learning_rate, C.max_iters, C.eval_interval)
 
 def generate_text():
     context = torch.zeros((1, 1), dtype=torch.long, device=C.device)
-    test = model1.generate(context, max_new_tokens=500)
+    test = model0.generate(context, max_new_tokens=500)
     print(decode(test[0].tolist()))
 generate_text()

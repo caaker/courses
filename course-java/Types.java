@@ -1,6 +1,5 @@
 import java.util.HashMap;
 
-// class name must match the file name or error is thrown
 public class Types {
 
   public static void main(String[] args) {
@@ -8,31 +7,42 @@ public class Types {
     typesComposite();
   }
 
-  // types require initialization
+  // 8 primary types require initialization, similar to C but adds byte
   public static void types() {
-    int i = 1;
-    System.out.println(i);
-    float f = 1.0f;
-    System.out.println(f);
-    double d = 2.0;
-    System.out.println(d);
-    char c = 'c';
-    System.out.println(c);
     boolean b = true;
-    System.out.println(b);
-    byte by = 1;
-    System.out.println(by);
+    char c = 'c';
     short s = 1;
+    byte by = 1;
+    int i = 1;
+    long l = 1;
+    float f = 1.0f;
+    double d = 2.0;
+
+    System.out.println(b);
+    System.out.println(c);
     System.out.println(s);
+    System.out.println(by);
+    System.out.println(i);
+    System.out.println(l);
+    System.out.println(f);
+    System.out.println(d);
   }
 
   public static void typesComposite() {
 
+    // string
+    String word = "word";
+    System.out.println(word);
+
     // array
-    int[] myArray = {1, 2, 3};
+    int[] arr1 = {1, 2, 3};
+    System.out.println(arr1);
 
     // hash
-    HashMap<String, String> capitalCities = new HashMap<String, String>();
+    HashMap<String, String> hm1 = new HashMap<String, String>();
+    hm1.put("A", "AA");
+    hm1.put("B", "BB");
+    System.out.println(hm1);
   }
 
 }

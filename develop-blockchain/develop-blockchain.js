@@ -20,7 +20,7 @@ class Block {
 class BlockChain {
   // improvement 2 - remove single use method
   constructor() {
-    const first_block = new Block(0, '01/01/1970', 'block0', 0);
+    const first_block = new Block(0, '01/01/1970', 'block0_data', 0);
     this.chain = [first_block];
   }
   getLastBlock() {
@@ -36,6 +36,6 @@ class BlockChain {
 }
 
 const blockchain = new BlockChain();
-blockchain.addBlock(new Block(1, '01/01/1971', 'block1'));
-blockchain.addBlock(new Block(2, '01/01/1972', 'block2'));
+blockchain.addBlock(new Block(1, '01/01/1971', 'block1_data'));
+blockchain.addBlock(new Block(2, '01/01/1972', 'block2_data'));
 console.log(blockchain.chain);

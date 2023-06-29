@@ -1,4 +1,4 @@
-// main types - number, string, array, hash, function, null, undefined
+// 7 main "types" - number, string, array, hash, function, null, undefined
 const number = 1;
 const string = 'string';
 const array = ['val1', 'val2'];

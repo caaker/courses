@@ -1,1 +1,2 @@
-console.log('Hello' + 'World');
+const word = 'World';
+console.log('Hello ' + `${ word }`);
