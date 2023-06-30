@@ -3,13 +3,13 @@
 using namespace std;
 
 int main() {
-  unordered_map<string, string> hashTable;
 
-  hashTable["tomato"] = "red";
-  hashTable["kale"] = "green";
+  unordered_map<string, string> hashmap;
+  hashmap["tomato"] = "red";
+  hashmap["kale"] = "green";
+  cout << "Color of tomato: " << hashmap["tomato"] << endl;
+  cout << "Color of kale: " << hashmap["kale"] << endl;
 
-  cout << "Color of tomato: " << hashTable["tomato"] << endl;
-  cout << "Color of kale: " << hashTable["kale"] << endl;
-
+  cout << hashmap.count("tomato") << endl;
   return 0;
 }
