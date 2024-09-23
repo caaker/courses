@@ -6,11 +6,12 @@ function mergeSplit(arr) {
     return arr;
   }
 
+  // split the array into left and right halves
   const mid = Math.floor(arr.length / 2);
   let left = arr.slice(0, mid);
   let right = arr.slice(mid);
 
-  // double recursion like dfs
+  // double recursion similar to depth first search
   console.log('mergeSplit: ', left, right);
   mergeSplit(left);
   mergeSplit(right);
