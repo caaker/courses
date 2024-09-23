@@ -1,5 +1,7 @@
-// update to use public static class and update jshint
-// embedded as follows: static Node = class {}
+// update later to use an emedded public static class
+// as follows: static Node = class {}
+// as another example of encapsulation
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -11,7 +13,7 @@ class Node {
 class BST {
   constructor() {
     this.root = null;
-    // this.makeRandomTree();
+    this.addRandomNodes();
     this.makeTree();
   }
   insertNode(val) {
@@ -46,8 +48,8 @@ class BST {
     this.insertNode(7);
   }
 
-  makeRandomTree() {
-    for(let i = 0; i < 10; i++) {
+  addRandomNodes() {
+    for(let i = 0; i < 5; i++) {
       let int = Math.floor(Math.random() * 10);
       this.insertNode(int);
     }

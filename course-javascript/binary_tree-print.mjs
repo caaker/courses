@@ -2,6 +2,7 @@ import BST from './binary_tree-insert.mjs';
 
 class BSTMethods extends BST {
 
+  // depth first search
   dfs(node) {
     function recurse(node) {
       if(node === null) {
@@ -9,18 +10,25 @@ class BSTMethods extends BST {
       }
 
       // pre order
-      recurse(node.left);
+      // console.log(node.val)
+      
+	  // recurse left
+	  recurse(node.left);
 
       // in order
-      console.log(node.val)
+      // console.log(node.val)
+	  
+	  // recurse right
       recurse(node.right);
-
+      
+	  // console.log(node.val)
       // post order
 
     }
     recurse(node);
   }
 
+  // breadth first search
   bfs(node) {
     const queue = [];
     if(node) {
