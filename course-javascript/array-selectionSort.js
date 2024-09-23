@@ -1,5 +1,7 @@
 const arr = [ 5, 3, 7, 1, 9 ];
 
+// searches for a minimum and swaps it once it reaches the end of the array
+// sorts linearly from begninning to end
 function selectionSort(arr) {
   for(let i = 0; i < arr.length; i++) {
     let min = i;
@@ -34,6 +36,6 @@ console.log(selectionSort(arr));
   Complexity:
 
     Space complexity is O(1) as there is no additional space needed.  The values are swapped in place.
-    Time complexity is O(n^2)
+    Time complexity is O(n^2) as there is a for loop up to n, and an embedded for loop up to n.
 
 */
