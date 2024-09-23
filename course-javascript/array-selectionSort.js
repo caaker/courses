@@ -15,6 +15,7 @@ function selectionSort(arr) {
   return arr;
 }
 
+// arr is passed by reference, so we do not need to return it
 function swap(arr, i, j) {
   let temp = arr[i];
   arr[i] = arr[j];
