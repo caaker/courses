@@ -21,7 +21,7 @@ class ClassTeacher {
 
     // methods are public and instance by default
     void instanceMethod() {
-        System.out.println("I am an instance method");
+        System.out.println("I am a public instance method");
         privateMethod();
     }
 
